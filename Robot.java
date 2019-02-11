@@ -14,6 +14,8 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.subsystems.DriveTrain;
+import frc.robot.subsystems.HatchPanel;
+import edu.wpi.first.wpilibj.DigitalInput;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -27,9 +29,10 @@ public class Robot extends IterativeRobot {
   private static final String kCustomAuto = "My Auto";
   private String m_autoSelected;
   private final SendableChooser<String> m_chooser = new SendableChooser<>();
-
+ // DigitalInput limitSwitch;
 public static OI oi;
 public static DriveTrain drive_train;
+public static HatchPanel hatch_panel;
 //public  static ADXRS450_Gyro gyroSPI ;
 
   /**
@@ -45,7 +48,12 @@ public static DriveTrain drive_train;
     
     //instantiate systems
     drive_train = new DriveTrain();
+    hatch_panel = new HatchPanel();
     oi = new OI();
+    //limitSwitch = new DigitalInput(0);
+    //if (limitSwitch.get()){
+      //System.out.println("hello everyone");
+    //}
     
    
   }
@@ -107,7 +115,7 @@ public static DriveTrain drive_train;
      super.teleopInit();
     //gyroSPI.calibrate();
     //gyroSPI.reset();
-    //System.out.println("gyro: "+gyroSPI);
+    //System.out.println("gyro: "+ gyroSPI);
 
 
 
@@ -116,8 +124,8 @@ public static DriveTrain drive_train;
   @Override
   public void teleopPeriodic() {
     Scheduler.getInstance().run();
-   // System.out.println(gyroSPI.getAngle());
-    
+    System.out.println(Robot.drive_train.getAngle());
+     // System.out.println(limitSwitch.get());
   }
 
   /**

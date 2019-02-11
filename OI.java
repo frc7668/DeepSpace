@@ -16,6 +16,7 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 public class OI {
     public static final Joystick joystick_f310 = new Joystick(0);
     public static JoystickButton button_a;
+    public static JoystickButton button_y;
 
      //f310 joystick mapping id
   // axiss
@@ -40,7 +41,10 @@ public class OI {
   OI(){
 
     button_a = new JoystickButton(joystick_f310, id_button_a);
-    button_a.whileHeld(new testCommand());
+    button_y = new JoystickButton(joystick_f310, id_button_y);
+   // button_a.whileHeld(new testCommand());
+
+   button_y.whileHeld(new UpHatchPanel());
 
 
   }
