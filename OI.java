@@ -17,6 +17,9 @@ public class OI {
     public static final Joystick joystick_f310 = new Joystick(0);
     public static JoystickButton button_a;
     public static JoystickButton button_y;
+//test
+    public static JoystickButton button_x;
+    public static JoystickButton button_b;
 
      //f310 joystick mapping id
   // axiss
@@ -42,9 +45,17 @@ public class OI {
 
     button_a = new JoystickButton(joystick_f310, id_button_a);
     button_y = new JoystickButton(joystick_f310, id_button_y);
+
+    button_x = new JoystickButton(joystick_f310, id_button_x);
+    button_b = new JoystickButton(joystick_f310, id_button_b);
+
+
    // button_a.whileHeld(new testCommand());
 
    button_y.whileHeld(new UpHatchPanel());
+   //testing
+   button_x.whileHeld(new UpFrontLift());
+   button_b.whileHeld(new DownFrontLift());
 
 
   }

@@ -15,6 +15,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.subsystems.DriveTrain;
 import frc.robot.subsystems.HatchPanel;
+import frc.robot.subsystems.Lift;
 import edu.wpi.first.wpilibj.DigitalInput;
 
 /**
@@ -33,6 +34,8 @@ public class Robot extends IterativeRobot {
 public static OI oi;
 public static DriveTrain drive_train;
 public static HatchPanel hatch_panel;
+public static Lift lift;
+
 //public  static ADXRS450_Gyro gyroSPI ;
 
   /**
@@ -49,6 +52,8 @@ public static HatchPanel hatch_panel;
     //instantiate systems
     drive_train = new DriveTrain();
     hatch_panel = new HatchPanel();
+    lift = new Lift();
+
     oi = new OI();
     //limitSwitch = new DigitalInput(0);
     //if (limitSwitch.get()){
