@@ -8,6 +8,7 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.SPI;
+import edu.wpi.first.wpilibj.Talon;
 
 import com.kauailabs.navx.frc.AHRS;
 
@@ -23,6 +24,7 @@ public class DriveTrain extends Subsystem {
 
  //public static ADXRS450_Gyro gyroSPI = new ADXRS450_Gyro();
  public static AHRS ahrs= new AHRS(SPI.Port.kMXP);
+ //public static Talon left1 = new  Talon(1);
 
   @Override
   public void initDefaultCommand() {

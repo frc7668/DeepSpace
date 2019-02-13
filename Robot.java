@@ -53,6 +53,8 @@ public static Lift lift;
     drive_train = new DriveTrain();
     hatch_panel = new HatchPanel();
     lift = new Lift();
+    
+
 
     oi = new OI();
     //limitSwitch = new DigitalInput(0);
@@ -129,8 +131,9 @@ public static Lift lift;
   @Override
   public void teleopPeriodic() {
     Scheduler.getInstance().run();
-    System.out.println(Robot.drive_train.getAngle());
-     // System.out.println(limitSwitch.get());
+    //System.out.println(Robot.drive_train.getAngle());
+      //System.out.println(Robot.hatch_panel.getLS());
+      //Robot.drive_train.left1.set(.2);
   }
 
   /**

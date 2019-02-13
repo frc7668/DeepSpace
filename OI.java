@@ -53,6 +53,7 @@ public class OI {
    // button_a.whileHeld(new testCommand());
 
    button_y.whileHeld(new UpHatchPanel());
+   button_a.whileHeld(new HatchDown());
    //testing
    button_x.whileHeld(new UpFrontLift());
    button_b.whileHeld(new DownFrontLift());

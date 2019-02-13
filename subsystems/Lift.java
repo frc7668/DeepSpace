@@ -17,19 +17,37 @@ public class Lift extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
 
-  public static Victor liftFrontMC = new Victor(1);
+  //public static Victor mc_front = new Victor(0);
+  //public static Victor mc_back = new Victor();
+  //public static Victoe mc_move =  new Victor();
 
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
     // setDefaultCommand(new MySpecialCommand());
+
+  
   }
 
   public void front_up(){
-    liftFrontMC.set(.2);
+   // mc_front.set(.2);
   }
 
+  //public void back_up(){
+   // mc_back.set(.2);
+ // }
+
   public void front_down(){
-    liftFrontMC.set(-.2);
+    //mc_front.set(-.2);
   }
+
+   //public void back_down(){
+   // mc_back.set(-.2);
+ // }
+
+  public void all_stop(){
+    //mc_front.set(0);
+    //mc_back.set(0);
+  }
+
 }

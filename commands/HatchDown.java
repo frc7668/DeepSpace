@@ -10,9 +10,10 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
-public class UpHatchPanel extends Command {
-  public UpHatchPanel() {
-     requires(Robot.hatch_panel);
+public class HatchDown extends Command {
+  public HatchDown() {
+    // Use requires() here to declare subsystem dependencies
+    requires(Robot.hatch_panel);
   }
 
   // Called just before this Command runs the first time
@@ -23,20 +24,18 @@ public class UpHatchPanel extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.hatch_panel.hatchUp();
+    Robot.hatch_panel.hatchDown();
   }
 
   // Make this return true when this Command no longer needs to run execute()
   @Override
   protected boolean isFinished() {
-    return Robot.hatch_panel.get_limit_switch_up();
+    return Robot.hatch_panel.get_limit_switch_down();
   }
 
   // Called once after isFinished returns true
   @Override
   protected void end() {
-    
-
   }
 
   // Called when another command which requires one or more of the same
