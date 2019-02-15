@@ -8,6 +8,7 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.DigitalInput;
+import edu.wpi.first.wpilibj.Servo;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.command.Subsystem;
@@ -21,7 +22,8 @@ public class HatchPanel extends Subsystem {
   // here. Call these from Commands.
 
   //public static Talon hatchTalon =new Talon(0);
-  public static SpeedController sc_1 = new Victor(0);
+  public static SpeedController sc_1 = new Victor(1);
+  public static Servo servo_1 = new Servo(0);
   public static DigitalInput limit_switch_down = new DigitalInput(1);
   public static DigitalInput limit_switch_up = new DigitalInput(0);
 
@@ -33,11 +35,17 @@ public class HatchPanel extends Subsystem {
   }
 
   public void hatchDown(){
-    sc_1.set(.4);
+    //servo_1.setAngle(45);
+     sc_1.set(.3);
+    servo_1.setAngle(15);
+    //30 is flat
 }
 
   public void hatchUp(){
-      sc_1.set(-.4);
+    // servo_1.setAngle(45);
+     sc_1.set(-.3);
+     servo_1.setAngle(115);
+      System.out.println("Servo is working?");
   }
 
   public void hatchStop(){

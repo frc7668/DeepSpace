@@ -6,6 +6,9 @@
 /*----------------------------------------------------------------------------*/
 
 package frc.robot;
+
+import com.ctre.phoenix.motorcontrol.ControlMode;
+
 // testing git line
 import edu.wpi.first.wpilibj.ADXRS450_Gyro;
 import edu.wpi.first.wpilibj.IterativeRobot;
@@ -15,7 +18,8 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.subsystems.DriveTrain;
 import frc.robot.subsystems.HatchPanel;
-import frc.robot.subsystems.Lift;
+import frc.robot.subsystems.LiftBack;
+import frc.robot.subsystems.LiftFront;
 import edu.wpi.first.wpilibj.DigitalInput;
 
 /**
@@ -34,7 +38,8 @@ public class Robot extends IterativeRobot {
 public static OI oi;
 public static DriveTrain drive_train;
 public static HatchPanel hatch_panel;
-public static Lift lift;
+public static LiftFront lift_front;
+public static LiftBack lift_back;
 
 //public  static ADXRS450_Gyro gyroSPI ;
 
@@ -52,8 +57,8 @@ public static Lift lift;
     //instantiate systems
     drive_train = new DriveTrain();
     hatch_panel = new HatchPanel();
-    lift = new Lift();
-    
+    lift_front = new LiftFront();
+    lift_back = new LiftBack();
 
 
     oi = new OI();
@@ -133,7 +138,12 @@ public static Lift lift;
     Scheduler.getInstance().run();
     //System.out.println(Robot.drive_train.getAngle());
       //System.out.println(Robot.hatch_panel.getLS());
-      //Robot.drive_train.left1.set(.2);
+     //Robot.drive_train.tank_drive(0,.5);
+     // Robot.drive_train.srx_1.set(ControlMode.PercentOutput ,.5);
+      //Robot.drive_train.v_2.set(ControlMode.PercentOutput,-.5);
+     //Robot.drive_train.scg_left.set(.5);
+    //Robot.drive_train.diff_drive.tankDrive(.5,5);
+    //Robot.hatch_panel.servo_1.setAngle(30);
   }
 
   /**

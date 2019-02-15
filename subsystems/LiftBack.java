@@ -7,47 +7,60 @@
 
 package frc.robot.subsystems;
 
-import edu.wpi.first.wpilibj.Victor;
+import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import frc.robot.commands.LiftBackStop;
 
 /**
  * Add your docs here.
  */
-public class Lift extends Subsystem {
+public class LiftBack extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
-
-  //public static Victor mc_front = new Victor(0);
-  //public static Victor mc_back = new Victor();
-  //public static Victoe mc_move =  new Victor();
+  public static Spark mc = new Spark(3);
+  //public static Spark mc_roll = new Spark(xxxxx);
+  
 
   @Override
   public void initDefaultCommand() {
     // Set the default command for a subsystem here.
-    // setDefaultCommand(new MySpecialCommand());
+     setDefaultCommand(new LiftBackStop());
 
   
   }
 
-  public void front_up(){
-   // mc_front.set(.2);
+  public void up(){
+    System.out.println("lift up method");
+    mc.set(1);
   }
 
-  //public void back_up(){
-   // mc_back.set(.2);
- // }
+ 
 
-  public void front_down(){
-    //mc_front.set(-.2);
+  public void down(){
+    mc.set(-1);
   }
 
-   //public void back_down(){
-   // mc_back.set(-.2);
- // }
+ 
 
-  public void all_stop(){
-    //mc_front.set(0);
+  public void stop(){
+    mc.set(0);
     //mc_back.set(0);
   }
 
+  public void roll_forward(){
+    //mc_roll.set(1);
+    
+  }
+
+  public void roll_backwards(){
+   // mc_roll.set(-1);
+  }
+
+   public void roll_stop(){
+    // mc_roll.set(0);
+   
+  }
+
+ 
+  
 }

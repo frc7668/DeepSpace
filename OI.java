@@ -52,15 +52,19 @@ public class OI {
 
    // button_a.whileHeld(new testCommand());
 
-   button_y.whileHeld(new UpHatchPanel());
-   button_a.whileHeld(new HatchDown());
+  //button_y.whileHeld(new UpHatchPanel());
+  // button_y.whileHeld( new Robot.hatch_panel.servo_1.setAngle(30));
+ // button_a.whileHeld(new HatchDown());
    //testing
-   button_x.whileHeld(new UpFrontLift());
-   button_b.whileHeld(new DownFrontLift());
-
+  button_x.whileHeld(new LiftFrontUp());
+  //robot goes , sticks go up
+  button_b.whileHeld(new LiftFrontDown()); //this lifts the robot!!!!!
+  //robot goes down, sticks go down
+  button_y.whileHeld(new LiftBackUp()); //this lifts the robot!!!!
+  //robot goes down, sticks go up
+  button_a.whileHeld(new LiftBackDown());
+  //robot goes up, sticks go down
 
   }
-
-
 
 }

@@ -10,10 +10,10 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
-public class DownFrontLift extends Command {
-  public DownFrontLift() {
+public class LiftBackStop extends Command {
+  public LiftBackStop() {
     // Use requires() here to declare subsystem dependencies
-    requires(Robot.lift);
+    requires(Robot.lift_back);
   }
 
   // Called just before this Command runs the first time
@@ -24,7 +24,9 @@ public class DownFrontLift extends Command {
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.lift.front_down();
+    Robot.lift_back.stop();
+    Robot.lift_back.roll_stop();
+
   }
 
   // Make this return true when this Command no longer needs to run execute()

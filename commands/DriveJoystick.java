@@ -10,22 +10,22 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
-public class UpFrontLift extends Command {
-  public UpFrontLift() {
+public class DriveJoystick extends Command {
+  public DriveJoystick() {
     // Use requires() here to declare subsystem dependencies
-    requires(Robot.lift);
+    requires(Robot.drive_train);
   }
 
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
+
   }
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.lift.front_up();
-    
+    Robot.drive_train.diff_drive.tankDrive(Robot.oi.joystick_f310.getRawAxis(5), Robot.oi.joystick_f310.getRawAxis(1));
   }
 
   // Make this return true when this Command no longer needs to run execute()
